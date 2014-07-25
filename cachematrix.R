@@ -37,9 +37,12 @@ cacheSolve <- function(x, ...) {
   message("computing data")
   cachedValue
 }
-sampleVector=rnorm(144)
-rm(commands, m, xx, cachedValue)
 
+## Here is an example how to use it:
+sampleVector=rnorm(144)
 xx<-matrix(sampleVector, nrow=20, ncol=20)
 commands<-makeCacheMatrix(xx)
+## first call: computing inverse
+cacheSolve(commands)
+## second call: getting cached inverse
 cacheSolve(commands)
